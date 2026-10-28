@@ -1,24 +1,57 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { Footer } from "@/components/portfolio/Footer";
+import { GuidesContact } from "@/components/portfolio/GuidesContact";
+import { Header } from "@/components/portfolio/Header";
+import { Hero } from "@/components/portfolio/Hero";
+import { Portfolio } from "@/components/portfolio/Portfolio";
+import { Process } from "@/components/portfolio/Process";
+import { Projects } from "@/components/portfolio/Projects";
+import { Reviews } from "@/components/portfolio/Reviews";
+import { Services } from "@/components/portfolio/Services";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "FB — Product Manager & Network Marketer" },
+      {
+        name: "description",
+        content:
+          "FB combines product strategy, research, and relationship-driven network marketing to build valuable products and sustainable business opportunities. Building Connections. Creating Opportunities. Growing Together.",
+      },
+      { property: "og:title", content: "FB — Product Manager & Network Marketer" },
+      {
+        property: "og:description",
+        content:
+          "Product strategy, business development, and relationship-driven growth — Building Connections. Creating Opportunities. Growing Together.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "FB — Product Manager & Network Marketer" },
+      {
+        name: "twitter:description",
+        content:
+          "Product strategy, business development, and relationship-driven growth — Building Connections. Creating Opportunities. Growing Together.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <Header />
+      <main>
+        <Hero />
+        <Services />
+        <Portfolio />
+        <Process />
+        <Projects />
+        <Reviews />
+        <GuidesContact />
+      </main>
+      <Footer />
     </div>
   );
 }
