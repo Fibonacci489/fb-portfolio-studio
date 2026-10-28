@@ -160,7 +160,7 @@ function ContactForm() {
 
     setStatus("submitting");
     setServerMessage("");
-    const result = await submitContactMessage({ data: parsed.data });
+    const result = await submitFn({ data: parsed.data });
     if (result.ok) {
       setStatus("success");
       setForm(EMPTY_FORM);
