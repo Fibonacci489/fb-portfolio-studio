@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import {
   AlertCircle,
   ArrowRight,
@@ -125,6 +126,7 @@ const EMPTY_FORM: Pick<ContactInput, "fullName" | "email" | "details"> & {
 } = { fullName: "", email: "", areaOfInterest: "", details: "", budgetRange: "" };
 
 function ContactForm() {
+  const submitFn = useServerFn(submitContactMessage);
   const [form, setForm] = useState(EMPTY_FORM);
   const [errors, setErrors] = useState<Partial<Record<keyof typeof EMPTY_FORM, string>>>({});
   const [status, setStatus] = useState<FormState>("idle");
