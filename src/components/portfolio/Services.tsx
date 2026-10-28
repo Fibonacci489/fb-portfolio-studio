@@ -53,7 +53,7 @@ export function Services() {
         <div className="mt-10 text-center">
           <button
             type="button"
-            onClick={() => setOpenId(SERVICES[0].title)}
+            onClick={() => setOpenId(SERVICES[0]!.title)}
             className="rounded-md border border-input px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-secondary focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           >
             View All Services

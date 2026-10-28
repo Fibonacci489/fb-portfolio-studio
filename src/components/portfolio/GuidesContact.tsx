@@ -369,11 +369,12 @@ function ChannelList() {
   return (
     <ul className="space-y-2.5">
       {CHANNEL_META.map(({ key, label, icon }) => {
+        const Icon = icon;
         const value = CONTACT_CHANNELS[key];
         return (
           <li key={key} className="flex items-center gap-3 text-sm">
             <span className="flex size-8 items-center justify-center rounded-md border border-[oklch(0.966_0.005_258.3/0.18)] bg-secondary/60 text-silver/80">
-              <icon className="size-4" aria-hidden />
+              <Icon className="size-4" aria-hidden />
             </span>
             <span className="text-muted-foreground">{label}:</span>
             {value ? (

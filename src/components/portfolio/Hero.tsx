@@ -7,7 +7,7 @@ import { BrandLogo } from "./BrandLogo";
 
 /** Subtle connected-nodes globe: a world of opportunities, quietly drawn. */
 function NetworkGlobe() {
-  const nodes = [
+  const nodes: Array<[number, number]> = [
     [50, 18], [28, 30], [72, 28], [18, 48], [50, 44], [82, 50],
     [34, 62], [64, 66], [46, 80], [24, 78], [76, 80], [58, 26],
   ] as const;
@@ -51,10 +51,10 @@ function NetworkGlobe() {
       {links.map(([a, b], i) => (
         <line
           key={`l${i}`}
-          x1={nodes[a][0]}
-          y1={nodes[a][1]}
-          x2={nodes[b][0]}
-          y2={nodes[b][1]}
+          x1={nodes[a]![0]}
+          y1={nodes[a]![1]}
+          x2={nodes[b]![0]}
+          y2={nodes[b]![1]}
           stroke="currentColor"
           strokeOpacity="0.35"
           strokeWidth="0.35"

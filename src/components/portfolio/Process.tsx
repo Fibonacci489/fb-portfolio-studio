@@ -4,7 +4,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { SectionHeading } from "./SectionHeading";
 
 export function Process() {
-  const ref = useReveal<HTMLDivElement>();
+  const ref = useReveal<HTMLOListElement>();
 
   return (
     <section
