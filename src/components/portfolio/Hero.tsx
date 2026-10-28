@@ -96,7 +96,7 @@ export function Hero() {
               className="absolute -inset-5 rounded-full bg-[radial-gradient(circle,oklch(0.846_0.013_255.5/0.12),transparent_70%)] blur-md"
             />
             <div className="rounded-full border border-[oklch(0.966_0.005_258.3/0.25)] p-2 shadow-[0_0_80px_oklch(0.846_0.013_255.5/0.15)]">
-              <BrandLogo size={200} framed className="sm:h-56 sm:w-56" />
+              <BrandLogo size={200} framed />
             </div>
           </div>
           <p className="text-center text-xs tracking-[0.3em] text-silver/70 uppercase lg:text-left">

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { ArrowRight, Tag } from "lucide-react";
+import { Tag } from "lucide-react";
 
 import { PORTFOLIO_FILTERS, PORTFOLIO_ITEMS, type PortfolioCategory } from "@/data/content";
 import { useReveal } from "@/hooks/use-reveal";

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ArrowRight, X } from "lucide-react";
 
 import { SERVICES } from "@/data/content";
-import { useReveal } from "@/hooks/use-reveal";
+import { scrollToSection, useReveal } from "@/hooks/use-reveal";
 
 import { SectionHeading } from "./SectionHeading";
 
@@ -106,7 +106,10 @@ export function Services() {
             </ul>
             <button
               type="button"
-              onClick={() => setOpenId(null)}
+              onClick={() => {
+                setOpenId(null);
+                window.setTimeout(() => scrollToSection("contact"), 60);
+              }}
               className="mt-7 w-full rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-85 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
             >
               Discuss this service
