@@ -223,7 +223,7 @@ function ContactForm() {
                 placeholder="Your name"
               />
               {errors.fullName && (
-                <p id="contact-name-error" role="alert" className="mt-1.5 flex items-center gap-1 text-xs text-destructive-foreground text-red-300">
+                <p id="contact-name-error" role="alert" className="mt-1.5 flex items-center gap-1 text-xs text-destructive-foreground">
                   <AlertCircle className="size-3" aria-hidden /> {errors.fullName}
                 </p>
               )}
@@ -245,7 +245,7 @@ function ContactForm() {
                 placeholder="you@example.com"
               />
               {errors.email && (
-                <p id="contact-email-error" role="alert" className="mt-1.5 flex items-center gap-1 text-xs text-red-300">
+                <p id="contact-email-error" role="alert" className="mt-1.5 flex items-center gap-1 text-xs">
                   <AlertCircle className="size-3" aria-hidden /> {errors.email}
                 </p>
               )}
@@ -276,7 +276,7 @@ function ContactForm() {
                 ))}
               </select>
               {errors.areaOfInterest && (
-                <p id="contact-area-error" role="alert" className="mt-1.5 flex items-center gap-1 text-xs text-red-300">
+                <p id="contact-area-error" role="alert" className="mt-1.5 flex items-center gap-1 text-xs">
                   <AlertCircle className="size-3" aria-hidden /> {errors.areaOfInterest}
                 </p>
               )}
@@ -318,14 +318,14 @@ function ContactForm() {
               placeholder="Tell me a little about your idea, challenge, or opportunity…"
             />
             {errors.details && (
-              <p id="contact-details-error" role="alert" className="mt-1.5 flex items-center gap-1 text-xs text-red-300">
+              <p id="contact-details-error" role="alert" className="mt-1.5 flex items-center gap-1 text-xs">
                 <AlertCircle className="size-3" aria-hidden /> {errors.details}
               </p>
             )}
           </div>
 
           {status === "error" && serverMessage && (
-            <p role="alert" className="flex items-center gap-1.5 rounded-md border border-destructive/40 bg-destructive/10 px-3 py-2 text-xs text-red-300">
+            <p role="alert" className="flex items-center gap-1.5 rounded-md border border-destructive/40 bg-destructive/10 px-3 py-2 text-xs">
               <AlertCircle className="size-3.5 shrink-0" aria-hidden /> {serverMessage}
             </p>
           )}
