@@ -18,12 +18,13 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+import fbLogo from "@/assets/fb-logo.png.asset.json";
+
 /* ============================================================
  * BRAND
  * ============================================================
- * Replace `logoUrl` with the FB logo image (a URL or imported
- * asset path). Until a logo is supplied, the site renders a
- * refined "FB" monogram placeholder in the same circular format.
+ * The official FB logo asset (CDN pointer). BrandLogo renders it
+ * with object-fit: contain in the hero, header and footer.
  */
 export const BRAND = {
   name: "FB",
@@ -32,7 +33,7 @@ export const BRAND = {
   eyebrow: "PRODUCT STRATEGY • NETWORK GROWTH",
   intro:
     "I combine product thinking, strategic planning, business development, and relationship-driven marketing to help create valuable solutions, connect opportunities, and support sustainable growth.",
-  logoUrl: null as string | null,
+  logoUrl: fbLogo.url as string,
 };
 
 /* ============================================================
