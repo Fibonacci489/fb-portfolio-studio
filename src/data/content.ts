@@ -491,19 +491,44 @@ export const CERTIFICATIONS: Certification[] = [
 ];
 
 /* ============================================================
- * REVIEWS
+ * REVIEWS & TESTIMONIAL MEDIA
  * ============================================================
- * No invented testimonials. Add genuine reviews here as they are
- * collected; until then the section renders an honest empty state.
- * Example entry:
- * { name: "", role: "", service: "", quote: "", rating: undefined }
+ * Supports written testimonials, 5–30 minute video reviews
+ * (YouTube, Vimeo, Loom, or uploaded MP4/WebM files), and
+ * visual proof (screenshots, metrics, client photos, endorsements).
+ *
+ * Add real reviews, videos, and images here.
  */
+export type ReviewMediaType = "text" | "video" | "image";
+
 export interface Review {
+  id: string;
   name: string;
   role: string;
-  service: string;
-  quote: string;
+  service?: string;
+  company?: string;
+  avatarUrl?: string;
+  quote?: string;
   rating?: number; // 1–5, only when the reviewer gave one
+  date?: string;
+
+  // Media type: "video" (5–30m or any duration), "image" (screenshots/proof), or "text"
+  mediaType?: ReviewMediaType;
+
+  // --- Video Review Fields (Supports 5–30 min videos) ---
+  videoUrl?: string; // YouTube, Vimeo, Loom URL, or /reviews/videos/video.mp4
+  videoDuration?: string; // e.g. "8 min", "14:30", "28 min"
+  videoThumbnail?: string; // Custom poster image or thumbnail URL
+  videoTitle?: string; // Title / topic of the video testimonial
+  videoDescription?: string; // What is covered in the video
+
+  // --- Image Review Fields (Screenshots, charts, endorsements) ---
+  imageUrl?: string; // Screenshot, WhatsApp proof, analytics chart, or document
+  imageCaption?: string; // Caption or description
+  imageCategory?: "Screenshot" | "Client Result" | "Endorsement" | "Photo";
+
+  // Optional key highlights or metrics
+  highlights?: string[];
 }
 
 export const REVIEWS: Review[] = [];
