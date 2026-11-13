@@ -63,6 +63,7 @@ export const NAV_LINKS = [
   { label: "Portfolio", id: "portfolio" },
   { label: "Process & Procedures", id: "process" },
   { label: "Projects", id: "projects" },
+  { label: "Certifications", id: "certifications" },
   { label: "Reviews", id: "reviews" },
   { label: "Guides / Contact", id: "contact" },
 ] as const;
@@ -398,6 +399,94 @@ export const CASE_STUDIES: CaseStudy[] = [
     tools: ["Network mapping", "Outreach sequencing", "CRM basics", "Feedback reviews"],
     outcomes: "",
     facets: 10,
+  },
+];
+
+/* ============================================================
+ * CERTIFICATIONS
+ * ============================================================ */
+export interface Certification {
+  id: string;
+  title: string;
+  issuer: string;
+  platform: string;
+  recipient: string;
+  issueDate: string;
+  credentialId?: string;
+  verificationUrl: string;
+  imageUrl: string;
+  signatory?: string;
+  category: string;
+  summary: string;
+  skills: string[];
+}
+
+export const CERTIFICATIONS: Certification[] = [
+  {
+    id: "google-digital-marketing",
+    title: "Google Digital Marketing & E-commerce Certificate",
+    issuer: "Google Career Certificates",
+    platform: "Coursera (In collaboration with Google)",
+    recipient: "Fibonacci II",
+    issueDate: "April 12, 2025",
+    credentialId: "GCC-7F3K-9J2Q-4B8M",
+    verificationUrl: "https://coursera.org/verify/GCC-7F3K-9J2Q-4B8M",
+    imageUrl: "/certificates/google-digital-marketing.jpg",
+    signatory: "Ruth K. Porat, President, Google Careers",
+    category: "Digital Marketing & E-commerce",
+    summary:
+      "Demonstrated the knowledge and skills required to apply digital marketing strategies, build an online store, analyze data, and drive business growth in the digital economy.",
+    skills: [
+      "Digital Marketing Strategy",
+      "E-Commerce & Online Stores",
+      "Marketing Analytics & Data",
+      "Customer Acquisition",
+      "Conversion & Growth",
+    ],
+  },
+  {
+    id: "zapier-automation-specialist",
+    title: "Zapier Automation Specialist",
+    issuer: "Zapier Academy",
+    platform: "Zapier Academy",
+    recipient: "FIBONACCI II",
+    issueDate: "November 28, 2024",
+    credentialId: "7f4e3c2d-9a88-4e7b-8c1d-6f3a2b1e9c7e",
+    verificationUrl: "https://zapier.com/academy",
+    imageUrl: "/certificates/zapier-automation-specialist.jpg",
+    signatory: "Wade Foster, CEO & Co-Founder, Zapier",
+    category: "Workflow Automation",
+    summary:
+      "Recognized for completing the Zapier Academy curriculum and demonstrating skills in building automated workflows, connecting multi-app stacks, transforming data, and streamlining business processes.",
+    skills: [
+      "Zapier Fundamentals",
+      "Building Multi-Step Zaps",
+      "App Integrations & Triggers",
+      "Data & Transformations",
+      "Testing & Troubleshooting",
+      "Best Practices & Scaling",
+    ],
+  },
+  {
+    id: "n8n-foundations-program",
+    title: "n8n Foundations Program",
+    issuer: "n8n Academy",
+    platform: "n8n Academy",
+    recipient: "FIBONACCI II",
+    issueDate: "June 15, 2023",
+    verificationUrl: "https://learn.n8n.io",
+    imageUrl: "/certificates/n8n-foundations-program.jpg",
+    signatory: "n8n Academy",
+    category: "Workflow Automation & AI",
+    summary:
+      "Completed all three official n8n Academy courses demonstrating practical knowledge and skills in workflow automation with n8n, including integrations, APIs, AI, testing and best practices.",
+    skills: [
+      "n8n101 · Essentials: Your First Workflows",
+      "n8n102 · Integrations: APIs & Connected Workflows",
+      "n8n103 · In Practice: AI, Testing & Best Practices",
+      "API & Webhook Integrations",
+      "AI & Automation Testing",
+    ],
   },
 ];
 
