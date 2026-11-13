@@ -36,7 +36,12 @@ export function useReveal<T extends HTMLElement>() {
 /** Smoothly scrolls to a section id, keeping the sticky header clear. */
 export function scrollToSection(id: string) {
   const el = document.getElementById(id);
-  if (!el) return;
+  if (!el) {
+    if (typeof window !== "undefined") {
+      window.location.href = `/#${id}`;
+    }
+    return;
+  }
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   el.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
   // Move focus for keyboard users without adding the element to tab order.

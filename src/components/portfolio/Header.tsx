@@ -84,7 +84,7 @@ export function Header() {
         </button>
 
         {/* Desktop nav */}
-        <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-0.5 xl:gap-1 lg:flex">
           {NAV_LINKS.map((link) => (
             <button
               key={link.id}
@@ -92,7 +92,7 @@ export function Header() {
               onClick={() => go(link.id)}
               aria-current={activeId === link.id ? "true" : undefined}
               className={cn(
-                "rounded-md px-3 py-2 text-[13px] font-medium transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none",
+                "rounded-md px-2 xl:px-3 py-1.5 text-[12px] xl:text-[13px] font-medium transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none whitespace-nowrap",
                 activeId === link.id
                   ? "text-silver-highlight"
                   : "text-muted-foreground hover:text-foreground",
@@ -104,7 +104,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => go("contact")}
-            className="ml-3 rounded-md bg-primary px-4 py-2 text-[13px] font-semibold text-primary-foreground transition-opacity hover:opacity-85 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            className="ml-2 xl:ml-3 rounded-md bg-primary px-3.5 xl:px-4 py-1.5 xl:py-2 text-[12px] xl:text-[13px] font-semibold text-primary-foreground transition-opacity hover:opacity-85 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none whitespace-nowrap"
           >
             Let&apos;s Connect
           </button>
